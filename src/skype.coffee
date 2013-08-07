@@ -34,6 +34,7 @@ class SkypeAdapter extends Adapter
             user = @robot.brain.userForId id
             user.name = decoded.user
         user.room = decoded.room
+        user.topic = decoded.topic
         return unless decoded.message
         @receive new TextMessage user, decoded.message
     @skype.stderr.on 'data', (data) =>
